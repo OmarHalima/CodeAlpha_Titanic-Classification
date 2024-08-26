@@ -16,7 +16,8 @@ To get started with this project, you need to have Python installed on your syst
 - numpy
 - sklearn
 - matplotlib
-- seaborn
+- tkinter 
+
 
 ## Usage
 After cloning the repository, you can run the Jupyter notebook to see the step-by-step process of data exploration, preprocessing, model building, and evaluation.
