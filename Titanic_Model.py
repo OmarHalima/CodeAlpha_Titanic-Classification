@@ -1,7 +1,8 @@
+# Importing the libraries
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, accuracy_score
 import tkinter as tk
 from tkinter import messagebox
 
@@ -40,6 +41,15 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 # Train the model
 model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(X_train, y_train)
+
+# Evaluate the model
+y_pred = model.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+report = classification_report(y_test, y_pred)
+
+print(f"Model Accuracy: {accuracy:.2f}")
+print("Classification Report:")
+print(report)
 
 # Function to predict survival based on user input
 def predict_survival():
